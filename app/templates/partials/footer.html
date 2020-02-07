@@ -1,0 +1,25 @@
+
+
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link boxshadow3" href="{{ url_for('index') }}"><h3><i><b>Fantasy Formulas</b></i></h3><span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <ul class="navbar-nav m1-auto">
+            {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="btn border nav-link mr-2 active" role="button" aria-pressed="true" href="{{ url_for('account.logout') }}">Logout</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="btn border nav-link mr-2 active" role="button" aria-pressed="true" href="{{ url_for('account.login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn border nav-link mr-2 active" role="button" aria-pressed="true" href="{{ url_for('account.register') }}">Register</a>
+                </li> 
+            {% endif %}
+        </ul>   
+    </div>
+</nav>
